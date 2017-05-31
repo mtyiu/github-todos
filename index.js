@@ -111,7 +111,7 @@ function main (processArgv, conf) {
   }
 
   process.on("exit", function () {
-    process.stdin.end();
+    process.stdin.pause();
   });
 
   // Configure opts and run command (inside a domain to catch any error)
