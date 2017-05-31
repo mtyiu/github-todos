@@ -3,7 +3,6 @@
 /* eslint no-process-exit:0 */
 
 var optimist = require("optimist");
-var ttys = require("ttys");
 var _ = require("lodash");
 
 var help = require("./lib/help");
@@ -112,7 +111,7 @@ function main (processArgv, conf) {
   }
 
   process.on("exit", function () {
-    ttys.stdin.end();
+    process.stdin.end();
   });
 
   // Configure opts and run command (inside a domain to catch any error)
